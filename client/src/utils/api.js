@@ -110,4 +110,3 @@ export default API;
 // /api/v2/ sfdsa fds
 
 // service ==> axios instance--> get /post/put/delete===> it will use configurations (timeout (4000ms) , baseURL ("/api") )==> it will go for the network call there ur proxy will be applied ==> this would be done internally by axios
-//

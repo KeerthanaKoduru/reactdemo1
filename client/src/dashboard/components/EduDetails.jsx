@@ -1,7 +1,7 @@
 import React from "react";
 import EduRow from "./EduRow";
 
-const EduDetails = () => {
+const EduDetails = ({ education, onDelete }) => {
   return (
     <>
       <table class="table">
@@ -14,7 +14,16 @@ const EduDetails = () => {
           </tr>
         </thead>
         <tbody>
-          <EduRow />
+          {/* <EduRow /> */}
+          {education && education.length > 0 ? (
+            education.map((edu) => (
+              <EduRow key={edu._id} edu={edu} onDelete={onDelete} />
+            ))
+          ) : (
+            <tr>
+              <td colSpan="4">No education credentials found.</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </>

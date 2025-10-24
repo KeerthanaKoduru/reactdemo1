@@ -225,6 +225,7 @@ img {
 }
 
 /* Overlay */
+/* to make the image dark a bit */
 .dark-overlay {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;

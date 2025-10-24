@@ -42,8 +42,8 @@ export const loadUser = async () => {
     // response(failure): {error validational details}
     const response = await API.get("/auth");
     // below return is ur success response
-    console.log(response);
-    localStorage.setItem("token", response.data.token);
+    //console.log(response);
+    //localStorage.setItem("token", response.data.token);
     return { data: response.data, status: response.status };
   } catch (error) {}
 };
@@ -57,7 +57,7 @@ export const loginUser = async (userData) => {
     // response(failure): {error validational details}
     const response = await API.post("/auth", userData);
     // below return is ur success response
-    console.log(response);
+    console.log(response.data);
     localStorage.setItem("token", response.data.token);
     return { data: response.data, status: response.status };
   } catch (error) {}
@@ -72,7 +72,7 @@ export const registerUser = async (userData) => {
     // response(failure): {error validational details}
     const response = await API.post("/users", userData);
     // below return is ur success response
-    console.log(response.data.token);
+    console.log(response.data);
     localStorage.setItem("token", response.data.token);
     return { data: response.data, status: response.status };
   } catch (error) {}

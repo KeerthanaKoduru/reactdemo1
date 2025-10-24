@@ -1,7 +1,7 @@
 import React from "react";
 import ExpRow from "./ExpRow";
 
-const ExpDetails = () => {
+const ExpDetails = ({ experience, onDelete }) => {
   return (
     <>
       <h2 class="my-2">Experience Credentials</h2>
@@ -15,7 +15,16 @@ const ExpDetails = () => {
           </tr>
         </thead>
         <tbody>
-          <ExpRow />
+          {/* <ExpRow /> */}
+          {experience && experience.length > 0 ? (
+            experience.map((exp) => (
+              <ExpRow key={exp._id} exp={exp} onDelete={onDelete} />
+            ))
+          ) : (
+            <tr>
+              <td colSpan="4">No experience credentials found.</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </>
